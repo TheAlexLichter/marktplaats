@@ -1,0 +1,54 @@
+{
+  "name": "marktplaats",
+  "version": "1.0.1",
+  "description": "CLI tool for searching Marktplaats.nl listings",
+  "homepage": "https://github.com/TheAlexLichter/marktplaats#readme",
+  "bugs": {
+    "url": "https://github.com/TheAlexLichter/marktplaats/issues"
+  },
+  "license": "MIT",
+  "author": "Alexander Lichter <npm@lichter.io>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheAlexLichter/marktplaats.git"
+  },
+  "bin": {
+    "marktplaats": "./dist/cli.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./cli": "./dist/cli.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "vp pack",
+    "dev": "vp pack --watch",
+    "test": "vp test",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@effect/cli": "^0.73.2",
+    "@effect/platform": "^0.94.5",
+    "@effect/platform-node": "^0.104.1",
+    "effect": "^3.19.19"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "bumpp": "^10.3.2",
+    "typescript": "^5.9.3",
+    "vite-plus": "latest",
+    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+      "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    }
+  }
+}
